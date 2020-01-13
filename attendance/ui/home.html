@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Kulim+Park&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Girassol&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+    <title>E-Attendance</title>
+
+    <style>
+        body {
+            margin: unset;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: black;
+        }
+
+        .card {
+            -webkit-box-shadow: inset 4px -10px 27px 0px rgba(235, 226, 227, 1);
+            -moz-box-shadow: inset 4px -10px 27px 0px rgba(235, 226, 227, 1);
+            box-shadow: inset 4px -10px 27px 0px rgba(235, 226, 227, 1);
+        }
+
+        body {
+            /* The image used */
+            /* background-image: url("wall.png"); */
+            /* Full height */
+            height: 100%;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .bg {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            /* width: 100%;
+        height: 48%; */
+            background-image: url("back.png");
+            /* transform: skewY(-12deg);
+        transform-origin: bottom right; */
+            z-index: -1;
+            filter: blur(0);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            transition: 0.4s -webkit-filter linear;
+        }
+
+
+        .btn-primary {
+            color: #fff;
+            background-color: #9f1c32;
+            border-color: #9f1c32;
+        }
+
+        .btn:hover {
+            background-color: #9f1c32;
+            border-color: #9f1c32;
+        }
+
+        #a-link1 #a-link2 #a-link3{
+            font-family: 'Kulim Park', sans-serif;
+        }
+
+        .card-title {
+            /* font-family: 'Girassol', cursive; */
+            font-family: 'Josefin Sans', sans-serif;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="bg" id="bg" style="">
+        </div>
+        <br>
+
+        <!-- header -->
+        <div class="d-flex justify-content-center" style="margin: 2rem">
+            <div style="display: block;" id="landing">
+                <center>
+                    <img src="logo.png" alt="" srcset="" width="250rem">
+                </center>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#" style="color:rgba(235, 226, 227, 1)">Welcome <b>ADMIN</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            </div>
+        </nav>
+
+        <br><br><br>
+        <!-- cards row -->
+        <div class="row">
+
+            <div class="col d-flex justify-content-center" style="margin-bottom: 1rem;">
+                <div class="card" id="card1" 
+                style="width: 18rem; height: 9rem;
+                -webkit-box-shadow: 10px 10px 18px 0px rgba(0,0,0,0.75);
+                -moz-box-shadow: 10px 10px 18px 0px rgba(0,0,0,0.75);
+                box-shadow: 10px 10px 18px 0px rgba(0,0,0,0.75);"
+                onmouseover="effect1();"
+                    onmouseout="effect1();">
+
+                    <center><i class="fa fa-calendar-check-o fa-3x" aria-hidden="true"
+                            style="color: #9f1c32; padding-top: 1rem;"></i>
+                        <div class="card-body">
+                            <h5 class="card-title" id="rd">STUDENT</h5>
+                            <!-- update, add spcl, upload att, uipload stu, delete -->
+                            <div id="a-link1" style="display: none;">
+                                <p class="card-text-1">Update Attendance</p>
+                                <p class="card-text-1">Add Special Attendance</p>
+                                <p class="card-text-1">Upload Attendance</p>
+                                <p class="card-text-1">Upload Student</p>
+                                <p class="card-text-1">Delete Student</p>
+                            </div>
+                        </div>
+                    </center>
+                </div>
+            </div>
+
+
+            <div class="col d-flex justify-content-center" style="margin-bottom: 1rem;">
+                <div class="card" id="card2" style="width: 18rem; height: 9rem;
+                -webkit-box-shadow: 10px 10px 18px 0px rgba(0,0,0,0.75);
+                -moz-box-shadow: 10px 10px 18px 0px rgba(0,0,0,0.75);
+                box-shadow: 10px 10px 18px 0px rgba(0,0,0,0.75);" onmouseover="effect2();"
+                    onmouseout="effect2();">
+                    <center><i class="fa fa-book fa-3x" aria-hidden="true"
+                            style="color: #9f1c32; padding-top: 1rem;"></i>
+                        <div class="card-body">
+                            <h5 class="card-title">COURSE</h5>
+                            <!-- add, dleet, view cm, delete cm, allocate sub -->
+                            <div style="display: none" id="a-link2">
+                                <p class="card-text-1">Add Course</p>
+                                <p class="card-text-1">Delete Course</p>
+                                <p class="card-text-1">View Course Mapping</p>
+                                <p class="card-text-1">Delete Course Mapping</p>
+                                <p class="card-text-1">Allocate Subject</p>
+                            </div>
+                        </div>
+                    </center>
+                </div>
+            </div>
+
+
+            <div class="col d-flex justify-content-center" style="margin-bottom: 1rem;">
+                <div class="card" id="card3" style="width: 18rem; height: 9rem;
+                -webkit-box-shadow: 10px 10px 18px 0px rgba(0,0,0,0.75);
+                -moz-box-shadow: 10px 10px 18px 0px rgba(0,0,0,0.75);
+                box-shadow: 10px 10px 18px 0px rgba(0,0,0,0.75);"
+                onmouseover="effect3();"
+                    onmouseout="effect3();">
+                    <center><i class="fa fa-bars fa-3x" aria-hidden="true"
+                            style="color: #9f1c32; padding-top: 1rem;"></i>
+                        <div class="card-body">
+                            <h5 class="card-title">FACULTY</h5>
+                            <!-- display att, egen def, register fac, -->
+                            <div style="display: none" id="a-link3">
+                                <p class="card-text-1">Display Attendance</p>
+                                <p class="card-text-1">Generate Defaulter</p>
+                                <p class="card-text-1">Register Faculty</p>
+                            </div>
+                        </div>
+                    </center>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div> <!-- container-->
+
+
+    <script>
+        // For Card 1
+        function myFunction1() {
+            if (document.getElementById("card1").style.width == "20rem") {
+                document.getElementById("bg").style.filter = "blur(12px)";
+                document.getElementById("card2").style.filter = "blur(12px)";
+                document.getElementById("card3").style.filter = "blur(12px)";
+                document.getElementById("card2").style.height = "9rem";
+                document.getElementById("card3").style.height = "9rem";
+            } else if (document.getElementById("card1").style.width != "20rem") {
+                document.getElementById("bg").style.filter = "blur(0)";
+                document.getElementById("card2").style.filter = "blur(0)";
+                document.getElementById("card3").style.filter = "blur(0)";
+            }
+        }
+
+
+        function effect1() {
+
+            if (document.getElementById("card1").style.width == "18rem") {
+                document.getElementById("card1").style.transition = ".2s ease"
+                document.getElementById("card1").style.width = "20rem";
+                document.getElementById("card1").style.height = "100%";
+                document.getElementById("a-link1").style.display = "block";
+                myFunction1();
+
+                document.getElementById("card1").style.zIndex = "1";
+            } else if (document.getElementById("card1").style.width == "20rem") {
+                document.getElementById("card1").style.width = "18rem";
+                document.getElementById("card1").style.height = "9rem";
+                document.getElementById("a-link1").style.display = "none";
+                myFunction1();
+            }
+        }
+
+
+
+        // For Card 2
+        function myFunction2() {
+            if (document.getElementById("card2").style.width == "20rem") {
+                document.getElementById("bg").style.filter = "blur(12px)";
+                document.getElementById("card1").style.filter = "blur(12px)";
+                document.getElementById("card3").style.filter = "blur(12px)";
+                document.getElementById("card1").style.height = "9rem";
+                document.getElementById("card3").style.height = "9rem";
+            } else if (document.getElementById("card2").style.width != "20rem") {
+                document.getElementById("bg").style.filter = "blur(0)";
+                document.getElementById("card1").style.filter = "blur(0)";
+                document.getElementById("card3").style.filter = "blur(0)";
+            }
+        }
+
+
+        function effect2() {
+
+            if (document.getElementById("card2").style.width == "18rem") {
+                document.getElementById("card2").style.transition = ".2s ease"
+                document.getElementById("card2").style.width = "20rem";
+                document.getElementById("card2").style.height = "100%";
+                document.getElementById("a-link2").style.display = "block";
+                myFunction2();
+
+                document.getElementById("card2").style.zIndex = "1";
+            } else if (document.getElementById("card2").style.width == "20rem") {
+                document.getElementById("card2").style.width = "18rem";
+                document.getElementById("card2").style.height = "9rem";
+                document.getElementById("a-link2").style.display = "none";
+                myFunction2();
+            }
+        }
+
+
+
+        // For Card 3
+        function myFunction3() {
+            if (document.getElementById("card3").style.width == "20rem") {
+                document.getElementById("bg").style.filter = "blur(12px)";
+                document.getElementById("card2").style.filter = "blur(12px)";
+                document.getElementById("card1").style.filter = "blur(12px)";
+                document.getElementById("card2").style.height = "9rem";
+                document.getElementById("card1").style.height = "9rem";
+            } else if (document.getElementById("card1").style.width != "20rem") {
+                document.getElementById("bg").style.filter = "blur(0)";
+                document.getElementById("card2").style.filter = "blur(0)";
+                document.getElementById("card1").style.filter = "blur(0)";
+            }
+        }
+
+
+        function effect3() {
+
+            if (document.getElementById("card3").style.width == "18rem") {
+                document.getElementById("card3").style.transition = ".2s ease"
+                document.getElementById("card3").style.width = "20rem";
+                document.getElementById("card3").style.height = "100%";
+                document.getElementById("a-link3").style.display = "block";
+                myFunction3();
+
+                document.getElementById("card3").style.zIndex = "1";
+            } else if (document.getElementById("card3").style.width == "20rem") {
+                document.getElementById("card3").style.width = "18rem";
+                document.getElementById("card3").style.height = "9rem";
+                document.getElementById("a-link3").style.display = "none";
+                myFunction3();
+            }
+        }
+    </script>
+</body>
+
+</html>
